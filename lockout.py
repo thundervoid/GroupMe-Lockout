@@ -8,7 +8,7 @@ def main():
 	config = ConfigParser.RawConfigParser()
 	config.readfp(open('key.cfg'))
 	
-	GROUP_ID = "6372952"
+	GROUP_ID = "12676716"
 	BASE_URL = "https://api.groupme.com/v3/groups/"
 	ACCESS_TOKEN = config.get('key', 'api')
 	
@@ -32,7 +32,7 @@ def main():
 			pass
 		else:
 			for member in members:
-				if (member["nickname"] == "Steve Prendegast") or (member["nickname"] == "Steven Matthew Prendergast"):
+				if (member["nickname"] == "Alfred") or (member["nickname"] == "Jav - EN"):
 					try:
 						response = requests.post(url=FORMATTED_URL_MEMBERS+str(member["id"])+"/remove", params={'token':ACCESS_TOKEN, 'limit':30})
 						print response.content
@@ -41,7 +41,7 @@ def main():
 						print err
 					except:
 						pass
-				if member["nickname"] == "Jordan Santiago":
+				if member["nickname"] == "Test":
 					try:
 						response = requests.post(url=FORMATTED_URL_MEMBERS+str(member["id"])+"/remove", params={'token':ACCESS_TOKEN, 'limit':30})
 						print response.content
